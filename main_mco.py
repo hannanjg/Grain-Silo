@@ -1119,7 +1119,7 @@ galaxyWithD = nx.compose(Scoop(filament, galaxy), Scoop(filament, group))
 write_temp(galaxyWithD, "galaxyWithD")
 output_text_main_length_specs(galaxyWithD, 'galaxyWithD')
 
-print "Main_Length_Specs: done in: " + str(datetime.now() - startTime) + "\n\n"
+print "Main_Length_Specs:: done in: " + str(datetime.now() - startTime) + "\n"
 
 time_off()
 log_end(logFile)
