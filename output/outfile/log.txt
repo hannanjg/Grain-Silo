@@ -1,0 +1,31 @@
+2017-01-17 11:13:33.187000
+
+DEL_TEMP: EMPTY
+
+==============================
+PARAMETER
+==============================
+
+SOURCE: input\group_galaxies_smaller.txt
+OUTPUT: output/outfile
+CONSTANT: 
+	SPEED_OF_LIGHT: (km/s) 299792.458
+IMPORT/ADD: 
+	GALAXY_LIST: input\January_environment_input.txt
+	GROUP_LIST: input\group_galaxies_smaller.txt
+	GROUP_CENT_LIST: input\group_centers_smaller.txt
+SPANNING_TREE_GROUP:
+	TRIM_LENGTH: (Mpc/h) 4.0
+	MINIMUM_NUMBER_OF_MEMBER: 3
+SCOOPER:
+	SCOOP_RADIUS: (Mpc/h) 5.0
+	SCOOP_DISTANCE: (Mpc/h) 5.0
+SPANNING_TREE_TENDRIL: 
+	TRIM_LENGTH: (Mpc/h) 1.0
+	MINIMUM_NUMBER_OF_MEMBER: 2
+
+==============================
+IMPORT/ADD
+==============================
+
+ADD: (filament_MST_uncut) gexf: not found

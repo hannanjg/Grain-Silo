@@ -1,0 +1,32 @@
+2016-12-06 12:33:08.816000
+
+DEL_TEMP: EMPTY
+
+==============================
+PARAMETER
+==============================
+
+SOURCE: input\grpMEM.txt
+OUTPUT: output/new
+CONSTANT: 
+	SPEED_OF_LIGHT: (km/s) 299792.458
+IMPORT/ADD: 
+	GALAXY_LIST: input\gal.txt
+	GROUP_LIST: input\grpMEM.txt
+	GROUP_CENT_LIST: input\grpCENT.txt
+SPANNING_TREE_GROUP:
+	TRIM_LENGTH: (Mpc/h) 4.0
+	MINIMUM_NUMBER_OF_MEMBER: 3
+SCOOPER:
+	SCOOP_RADIUS: (Mpc/h) 5.0
+	SCOOP_DISTANCE: (Mpc/h) 5.0
+SPANNING_TREE_TENDRIL: 
+	TRIM_LENGTH: (Mpc/h) 1.0
+	MINIMUM_NUMBER_OF_MEMBER: 2
+
+==============================
+IMPORT/ADD
+==============================
+
+ADD: (filament_MST_uncut) gexf: not found
+input\grpCENT.txt: not found

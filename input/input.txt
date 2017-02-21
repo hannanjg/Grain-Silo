@@ -1,0 +1,11 @@
+output_folder1
+environment_input.txt
+group_galaxies.txt
+group_centers.txt
+299792.458
+5.75
+3
+4.13
+4.13
+3
+2

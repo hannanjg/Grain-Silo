@@ -1,0 +1,132 @@
+2017-02-21 12:27:58.539987
+
+DEL_TEMP: NO
+
+==============================
+PARAMETER
+==============================
+
+SOURCE: input/group_galaxies.txt
+OUTPUT: output/output_folder1
+CONSTANT: 
+	SPEED_OF_LIGHT: (km/s) 299792.458
+IMPORT/ADD: 
+	GALAXY_LIST: input/environment_input.txt
+	GROUP_LIST: input/group_galaxies.txt
+	GROUP_CENT_LIST: input/group_centers.txt
+SPANNING_TREE_GROUP:
+	TRIM_LENGTH: (Mpc/h) 5.75
+	MINIMUM_NUMBER_OF_MEMBER: 3
+SCOOPER:
+	SCOOP_RADIUS: (Mpc/h) 4.13
+	SCOOP_DISTANCE: (Mpc/h) 4.13
+SPANNING_TREE_TENDRIL: 
+	TRIM_LENGTH: (Mpc/h) 3.0
+	MINIMUM_NUMBER_OF_MEMBER: 2
+
+==============================
+IMPORT/ADD
+==============================
+
+IMPORT: (filament_MST_uncut) gexf: loaded
+('\tIMPORT: (filament_MST_uncut) N:', 166)
+('\tIMPORT: (filament_MST_uncut) E:', 165)
+IMPORT/ADD: (filament_MST_uncut) done in: 0:00:00.018692
+IMPORT: (galaxy) gexf: loaded
+IMPORT/ADD: (galaxy) done in: 0:00:00.045909
+IMPORT: (group_full) gexf: loaded
+IMPORT/ADD: (group_full) done in: 0:00:00.013908
+
+==============================
+FILAMENT
+==============================
+
+PROCESS_TREE: (filament_MST_uncut) with trim: 5.75 (Mpc/h), cut: 3 (members)
+	AVG_TREE_WEIGHT: (filament_MST_uncut) length: 14.8706355806
+	PROCESS_TREE: (filament_MST_uncut) N b cut:  166
+	PROCESS_TREE: (filament_MST_uncut) E b trim:  165
+	PROCESS_TREE: (filament_MST_uncut) E a trim:  39
+	PROCESS_TREE: (filament) E a cut: 10
+	PROCESS_TREE: (filament) N a cut: 13
+	PROCESS_TREE: (group_cent_non_filament) N a cut: 153
+PROCESS_TREE: (filament_MST_uncut) done in: 0:00:00.126284
+
+==============================
+GROUP
+==============================
+
+	PROCESS_GROUP: (group_full) N:  221
+	PROCESS_GROUP: (group_mem_non_filament) N: 221
+	PROCESS_GROUP: (group_mem_filament) N: 0
+PROCESS_GROUP: (group_full) done in: 0:00:00.085542
+
+==============================
+GALAXIES NEAR FILAMENT(GNF)
+==============================
+
+SCOOPER: (galaxy) with radius: 4.13 (Mpc/h), distance: 4.13 (Mpc/h)
+	SCOOPER: (galaxy) N b scoopR&D: 279
+	SCOOPER: (galaxy) N a scoopR: 277
+	SCOOPER: (gnf) N a scoopR: 2
+	SCOOPER: (galaxy) N a scoopD: 277
+	SCOOPER: (gnf) N a scoopD: 2
+SCOOPER: (galaxy) done in: 0:00:00.029466
+
+==============================
+TENDRIL & VOID
+==============================
+
+SPANNING_TREE_TENDRIL: (filament_MST_uncut) done in: 0:00:00.182198
+PROCESS_TENDRIL: (tendril_and_void) with trim: 3.0 (Mpc/h), cut: 2 (members)
+	PROCESS_TENDRIL: (tendril) N b cut: 277
+	PROCESS_TENDRIL: (tendril) E b trim:  94
+	PROCESS_TENDRIL: (tendril) E a trim:  34
+	PROCESS_TENDRIL: (tendril) E a cut: 9
+	PROCESS_TENDRIL: (tendril) N a cut: 13
+	PROCESS_TENDRIL: (void) N a cut: 264
+PROCESS_TENDRIL: (filament_MST_uncut) done in: 0:00:00.137484
+
+==============================
+OUTPUT
+==============================
+
+OUTPUT_FINAL_LIST: (notation):
+	GROUP:  1
+	GNF:  2
+	TENDRIL:  3
+	VOID:  4
+OUTPUT: done in: 0:00:00.240050
+
+==============================
+STATS
+==============================
+
+GALAXY_COUNT:
+	ALL:  500
+	GROUP:  221
+	GROUP_MEMBER_IN_FILAMENT:  0
+	GROUP_MEMBER_NOT_IN_FILAMENT:  221
+	GALAXIES_NEAR_FILAMENT:  2
+	TENDRIL:  13
+	VOID:  264
+GALAXY_RATIO:
+	ALL: 100.00
+	GROUP: 44.20
+	GROUP_MEMBER_IN_FILAMENT: 0.00
+	GROUP_MEMBER_NOT_IN_FILAMENT: 44.20
+	GALAXIES_NEAR_FILAMENT: 0.40
+	TENDRIL: 2.60
+	VOID: 52.80
+
+==============================
+Main_Length_Specs
+==============================
+
+Processed 500 galaxies.
+Main_Length_Specs: done in: 0:00:01.198837
+
+
+TOTAL DURATION: 0:00:01.198903
+
+2017-02-21 12:27:59.738955
+

@@ -1,0 +1,38 @@
+<gexf version="1.1" xmlns="http://www.gexf.net/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="undirected" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="0" title="Dec" type="double" />
+      <attribute id="1" title="zRS" type="double" />
+      <attribute id="2" title="RA" type="double" />
+      <attribute id="3" title="y" type="double" />
+      <attribute id="4" title="x" type="double" />
+      <attribute id="5" title="z" type="double" />
+      <attribute id="6" title="ID" type="integer" />
+    </attributes>
+    <nodes>
+      <node id="76" label="76">
+        <attvalues>
+          <attvalue for="0" value="15.259107" />
+          <attvalue for="1" value="0.02290553" />
+          <attvalue for="2" value="200.1899" />
+          <attvalue for="3" value="-22.8644096642" />
+          <attvalue for="4" value="-62.1774660606" />
+          <attvalue for="5" value="18.07263417" />
+          <attvalue for="6" value="76" />
+        </attvalues>
+      </node>
+      <node id="75" label="75">
+        <attvalues>
+          <attvalue for="0" value="15.321629" />
+          <attvalue for="1" value="0.02206582" />
+          <attvalue for="2" value="200.39985" />
+          <attvalue for="3" value="-22.2389089144" />
+          <attvalue for="4" value="-59.7991031722" />
+          <attvalue for="5" value="17.4797271343" />
+          <attvalue for="6" value="75" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges />
+  </graph>
+</gexf>
