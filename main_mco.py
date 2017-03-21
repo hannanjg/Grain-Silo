@@ -551,12 +551,14 @@ def output_text_final(graph, filename, folder_name):
         file.write("RA  ")
         file.write("Dec  ")
         file.write("zRS  ")
+        file.write("Distance ")
         file.write("ENVIRONMENT \n")        
         for node in graph:
                 file.write(str(graph.node[node]['ID']) + "  ")
                 file.write(str(graph.node[node]['RA']) + "  ")
                 file.write(str(graph.node[node]['Dec']) + "  ")
                 file.write(str(graph.node[node]['zRS']) + "  ")
+                file.write(str(graph.node[node]['d']) + " ")
                 file.write(str(graph.node[node]['ENVIRONMENT']) + "  ")
                 
                 i+=1
@@ -574,14 +576,15 @@ def output_text_main_length_specs(graph, filename):
     file.write("RA  ")
     file.write("Dec  ")
     file.write("zRS  ")
-    file.write("Distance \n")   
-    file.write("ENVIRONMENT \n")     
+    file.write("D from Backbone ")   
+    file.write("Environment \n")     
     for node in graph:
             file.write(str(graph.node[node]['ID']) + "  ")
             file.write(str(graph.node[node]['RA']) + "  ")
             file.write(str(graph.node[node]['Dec']) + "  ")
             file.write(str(graph.node[node]['zRS']) + "  ") 
             file.write(str(graph.node[node]['d']) + "  ")
+            file.write(str(graph.node[node]['ENVIRONMENT'] + " "))
 
             i+=1
             if i!= countMax: #check end of file
@@ -668,7 +671,6 @@ class Log(object):
         def flush(self) :
                 for f in self.files:
                         f.flush()
-
 
 def log_start(folder_name):
         dir_path = os.path.join('output', folder_name)
@@ -1066,9 +1068,24 @@ print "\tVOID: ", inputList[3][1]
 galaxy_full_final = output_final_list(galaxy_full, inputList)
 write_temp(galaxy_full_final,"galaxy_full_final")
 
+# Main_Length_Specs.py
+# Calculate the distance from galaxies to the filament backbone and output to galaxyWithD.txt
+logSec("Main_Length_Specs")
+galaxy_full_final = read_temp("galaxy_full_final")
+filament = read_temp("filament")
+
+gals_processed = galaxy_full_final.number_of_nodes()
+
+print "Processing " + str(gals_processed) + " galaxies."
+
+galaxyWithD = Scoop(filament, galaxy_full_final)
+write_temp(galaxyWithD, "galaxyWithD")
+output_text_main_length_specs(galaxyWithD, 'galaxyWithD')
+
+print "Main_Length_Specs:: done in: " + str(datetime.now() - startTime) + "\n"
 
 ## OUTPUT TO TEXT
-output_text_final(galaxy_full_final, 'galaxy_full_final', folderName)
+output_text_final(galaxyWithD, 'galaxy_full_final_withD', folderName)
 
 output_text_group_cent(filament_MST_uncut, 'filament_MST_uncut', folderName)
 output_text_group_cent(filament, 'filament', folderName)
@@ -1104,23 +1121,6 @@ print "\tGROUP_MEMBER_NOT_IN_FILAMENT: " + "%.2f" % (float(group_mem_non_filamen
 print "\tGALAXIES_NEAR_FILAMENT: " + "%.2f" % (float(gnf.number_of_nodes()*100)/galaxy_full.number_of_nodes())
 print "\tTENDRIL: " + "%.2f" % (float(tendril.number_of_nodes()*100)/galaxy_full.number_of_nodes())
 print "\tVOID: " + "%.2f" % (float(void.number_of_nodes()*100)/galaxy_full.number_of_nodes())
-
-# Main_Length_Specs.py
-# Calculate the distance from galaxies to the filament backbone and output to galaxyWithD.txt
-logSec("Main_Length_Specs")
-galaxy = read_temp("galaxy")
-filament = read_temp("filament")
-group = read_temp("group_mem_non_filament")
-
-gals_processed = galaxy.number_of_nodes() + group.number_of_nodes()
-
-print "Processed " + str(gals_processed) + " galaxies."
-
-galaxyWithD = nx.compose(Scoop(filament, galaxy), Scoop(filament, group))
-write_temp(galaxyWithD, "galaxyWithD")
-output_text_main_length_specs(galaxyWithD, 'galaxyWithD')
-
-print "Main_Length_Specs:: done in: " + str(datetime.now() - startTime) + "\n"
 
 time_off()
 log_end(logFile)

@@ -10,17 +10,6 @@
       <attribute id="6" title="ID" type="integer" />
     </attributes>
     <nodes>
-      <node id="76" label="76">
-        <attvalues>
-          <attvalue for="0" value="15.259107" />
-          <attvalue for="1" value="0.02290553" />
-          <attvalue for="2" value="200.1899" />
-          <attvalue for="3" value="-22.8644096642" />
-          <attvalue for="4" value="-62.1774660606" />
-          <attvalue for="5" value="18.07263417" />
-          <attvalue for="6" value="76" />
-        </attvalues>
-      </node>
       <node id="75" label="75">
         <attvalues>
           <attvalue for="0" value="15.321629" />
@@ -30,6 +19,17 @@
           <attvalue for="4" value="-59.7991031722" />
           <attvalue for="5" value="17.4797271343" />
           <attvalue for="6" value="75" />
+        </attvalues>
+      </node>
+      <node id="76" label="76">
+        <attvalues>
+          <attvalue for="0" value="15.259107" />
+          <attvalue for="1" value="0.02290553" />
+          <attvalue for="2" value="200.1899" />
+          <attvalue for="3" value="-22.8644096642" />
+          <attvalue for="4" value="-62.1774660606" />
+          <attvalue for="5" value="18.07263417" />
+          <attvalue for="6" value="76" />
         </attvalues>
       </node>
     </nodes>
