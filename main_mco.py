@@ -551,7 +551,7 @@ def output_text_final(graph, filename, folder_name):
         file.write("RA  ")
         file.write("Dec  ")
         file.write("zRS  ")
-        file.write("ENVIRONMENT  \n")        
+        file.write("ENVIRONMENT \n")        
         for node in graph:
                 file.write(str(graph.node[node]['ID']) + "  ")
                 file.write(str(graph.node[node]['RA']) + "  ")
@@ -574,14 +574,15 @@ def output_text_main_length_specs(graph, filename):
     file.write("RA  ")
     file.write("Dec  ")
     file.write("zRS  ")
-    file.write("Distance \n")        
+    file.write("Distance \n")   
+    file.write("ENVIRONMENT \n")     
     for node in graph:
             file.write(str(graph.node[node]['ID']) + "  ")
             file.write(str(graph.node[node]['RA']) + "  ")
             file.write(str(graph.node[node]['Dec']) + "  ")
             file.write(str(graph.node[node]['zRS']) + "  ") 
             file.write(str(graph.node[node]['d']) + "  ")
-            
+
             i+=1
             if i!= countMax: #check end of file
                 file.write("\n")
