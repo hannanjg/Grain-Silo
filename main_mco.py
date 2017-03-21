@@ -44,7 +44,7 @@ def spanning_tree_group(filename):
                         Dec = words[2]
                         zRS = words[3]
                         G.add_node(i, grpID = int(grpID), RA = float(RA), Dec = float(Dec), zRS = float(zRS),
-                                   x = (C*float(zRS)/100*math.cos(D*float(Dec))*math.cos(D*float(RA))),
+                                   x = (C * float(zRS) / 100 * math.cos(D*float(Dec))*math.cos(D*float(RA))),
                                    y = (C*float(zRS)/100*math.cos(D*float(Dec))*math.sin(D*float(RA))),
                                    z = (C*float(zRS)/100*math.sin(D*float(Dec))))               
                         i += 1

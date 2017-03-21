@@ -1,4 +1,4 @@
-2017-03-21 11:12:58.338042
+2017-03-21 12:09:06.476840
 
 DEL_TEMP: YES
 
@@ -35,17 +35,17 @@ finished with spanning_tree_group
 ADD: (filament_MST_uncut) gexf: created
 ('\tADD: (filament_MST_uncut) N a MST:', 166)
 ('\tADD: (filament_MST_uncut) E a MST:', 165)
-IMPORT/ADD: (filament_MST_uncut) done in: 0:00:00.249193
+IMPORT/ADD: (filament_MST_uncut) done in: 0:00:00.240240
 ADD: (galaxy) gexf: not found.
 ADD: (galaxy_full) gexf: created
-IMPORT/ADD: (galaxy) done in: 0:00:00.197365
+IMPORT/ADD: (galaxy) done in: 0:00:00.202075
 ADD: (group_full) gexf: not found
 ADD: (group_full) gexf: created
 	PROCESS_GALAXY: (galaxy) N b process: 500
 	PROCESS_GALAXY: (group_full) N: 221
 	PROCESS_GALAXY: (galaxy) N a process: 279
 PROCESS_GALAXY: (galaxy) gexf: created
-IMPORT/ADD: (group_full) done in: 0:00:00.184087
+IMPORT/ADD: (group_full) done in: 0:00:00.177364
 
 ==============================
 FILAMENT
@@ -59,7 +59,7 @@ PROCESS_TREE: (filament_MST_uncut) with trim: 5.75 (Mpc/h), cut: 3 (members)
 	PROCESS_TREE: (filament) E a cut: 10
 	PROCESS_TREE: (filament) N a cut: 13
 	PROCESS_TREE: (group_cent_non_filament) N a cut: 153
-PROCESS_TREE: (filament_MST_uncut) done in: 0:00:00.147447
+PROCESS_TREE: (filament_MST_uncut) done in: 0:00:00.139970
 
 ==============================
 GROUP
@@ -68,7 +68,7 @@ GROUP
 	PROCESS_GROUP: (group_full) N:  221
 	PROCESS_GROUP: (group_mem_non_filament) N: 221
 	PROCESS_GROUP: (group_mem_filament) N: 0
-PROCESS_GROUP: (group_full) done in: 0:00:00.082680
+PROCESS_GROUP: (group_full) done in: 0:00:00.088533
 
 ==============================
 GALAXIES NEAR FILAMENT(GNF)
@@ -80,13 +80,13 @@ SCOOPER: (galaxy) with radius: 4.13 (Mpc/h), distance: 4.13 (Mpc/h)
 	SCOOPER: (gnf) N a scoopR: 2
 	SCOOPER: (galaxy) N a scoopD: 277
 	SCOOPER: (gnf) N a scoopD: 2
-SCOOPER: (galaxy) done in: 0:00:00.041869
+SCOOPER: (galaxy) done in: 0:00:00.032249
 
 ==============================
 TENDRIL & VOID
 ==============================
 
-SPANNING_TREE_TENDRIL: (filament_MST_uncut) done in: 0:00:00.223782
+SPANNING_TREE_TENDRIL: (filament_MST_uncut) done in: 0:00:00.199242
 PROCESS_TENDRIL: (tendril_and_void) with trim: 3.0 (Mpc/h), cut: 2 (members)
 	PROCESS_TENDRIL: (tendril) N b cut: 277
 	PROCESS_TENDRIL: (tendril) E b trim:  94
@@ -94,7 +94,7 @@ PROCESS_TENDRIL: (tendril_and_void) with trim: 3.0 (Mpc/h), cut: 2 (members)
 	PROCESS_TENDRIL: (tendril) E a cut: 9
 	PROCESS_TENDRIL: (tendril) N a cut: 13
 	PROCESS_TENDRIL: (void) N a cut: 264
-PROCESS_TENDRIL: (filament_MST_uncut) done in: 0:00:00.174619
+PROCESS_TENDRIL: (filament_MST_uncut) done in: 0:00:00.194791
 
 ==============================
 OUTPUT
@@ -111,9 +111,9 @@ Main_Length_Specs
 ==============================
 
 Processing 500 galaxies.
-Main_Length_Specs:: done in: 0:00:01.887921
+Main_Length_Specs:: done in: 0:00:01.781477
 
-OUTPUT: done in: 0:00:00.608641
+OUTPUT: done in: 0:00:00.522206
 
 ==============================
 STATS
@@ -135,7 +135,7 @@ GALAXY_RATIO:
 	GALAXIES_NEAR_FILAMENT: 0.40
 	TENDRIL: 2.60
 	VOID: 52.80
-TOTAL DURATION: 0:00:01.911370
+TOTAL DURATION: 0:00:01.798094
 
-2017-03-21 11:13:00.249457
+2017-03-21 12:09:08.274968
 
