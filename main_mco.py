@@ -1039,7 +1039,7 @@ tendril_and_void = spanning_tree_tendril(make_path_temp("remaining_isolated_gala
 time("SPANNING_TREE_TENDRIL: (filament_MST_uncut)")
 print ("PROCESS_TENDRIL: (tendril_and_void) with trim: " + str(trimTendril) + " (Mpc/h), cut: " + str(cutTendril) + " (members)"
 )
-resultTendril = process_tendril(tendril_and_void, 1, 2)
+resultTendril = process_tendril(tendril_and_void, trimTendril, 2)
 output_text_temp(resultTendril[0], "tendril")
 output_text_temp(resultTendril[1], "void")
 write_temp(add_galaxy_tendril_and_void(make_path_temp("void.txt")),"void") # make void.gexf
